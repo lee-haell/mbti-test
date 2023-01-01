@@ -6,36 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>나의 N번째 직업은?</title>
     <link rel="stylesheet" href="/assets/css/reset.css">
-    <link rel="stylesheet" href="/assets/css/question.css">
+    <link rel="stylesheet" href="/assets/css/questions.css">
 </head>
 <body>
-    <!-- 질문바 시작 -->
-    <div class="barWrap">
-        <div class="bar"></div>
-        <div class="barBg"></div>
-    </div>
-    <!-- 질문바 끝 -->
-    <!-- 질문영역 시작 -->
-    <section class="sectionWrap">
-        <article class="questionBox">
-            <div class="questionBoxInner">
-                <div class="titleWrap">
-                    <h1 class="number">01</h1>
-                    <h2 class="title">회사에서 파티 스텝을 모집한다는데?</h2>
-                </div>
-                <ul class="answerListWrap">
-                    <li class="answerList">
-                        <p class="answer">파티 스텝은 못하지...</p>
-                        <p class="answer">(그래도 파티는 재밌겠다 히히😌)</p>
-                    </li>
-                    <li class="answerList">
-                        <p class="answer">재밌겠다!</p>
-                        <p class="answer">팀원한테 같이 지원하자고 해야지🥳</p>
-                    </li>
-                </ul>
+    <div class="questionsWrap">
+        <div class="questionsInner">
+            <!-- 질문바 시작 -->
+            <div class="progress">
+                <div class="value"></div>
             </div>
-        </article>
-    </section>
-    <!-- 질문영역 끝 -->
+            <!-- 질문바 끝 -->
+            <!-- 질문영역 시작 -->
+            <section class="sectionWrap">
+                <article class="questionBox">
+                    <div class="questionBoxInner">
+                        <div class="questionWrap">
+                            <h1 class="number"></h1>
+                            <h2 class="question"></h2>
+                        </div>
+                        <ul class="answerListWrap">
+                            <li class="answerList">
+                                <p class="choice1 answer"></p>
+                            </li>
+                            <li class="answerList">
+                                <p class="choice2 answer"></p>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+            <!-- 질문영역 끝 -->
+        </div>
+    </div>
+    <!-- 파일로 구분된 questions.js을 불러옴 -->
+    <script type="module" defer src="/assets/js/questions.js"></script>
 </body>
 </html>
