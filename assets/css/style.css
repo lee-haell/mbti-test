@@ -2,8 +2,10 @@
 
 /* 공통 */
 .wrap {
-    padding: 100px 0;
     text-align: center;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
     background: url('/assets/images/main_bg.jpg') center no-repeat;
 }
 

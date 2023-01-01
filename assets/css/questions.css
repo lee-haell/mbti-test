@@ -2,13 +2,15 @@
 
 /* questions.html - 공통영역 */
 .questionsWrap {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
     text-align: center;
     background-color: #e0e0e0;
-    height: 100vh;
 }
 
 .questionsWrap .questionsInner {
-    max-width: 500px;
+    min-width: 500px;
     margin: 0 auto;
 }
 
