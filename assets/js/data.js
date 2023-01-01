@@ -1,10 +1,11 @@
-export const questions = [
+//질문들 배열 데이터
+export const questionsData = [
   {
     number: '01',
-    question: '곧 크리스마스! 회사에서 크리스마스 파티 스텝을 모집한다는데?',
+    question: '회사에서 파티 스텝을 모집한다는데?',
     choices: [
-      { text: '파티 스텝은 못하지ㅎ...<br>(그래도 파티는 재밌겠다 히히)', value: 'i' },
-      { text: '재밌겠다!<br>○○한테 같이 지원하자고 해야지~', value: 'e' }
+      { text: '파티 스텝은 못하지😀<br>(그래도 파티는 재밌겠다ㅎㅎ)', value: 'i' },
+      { text: '재밌겠다🥳<br>(팀원한테 같이 지원하자고 해야지!)', value: 'e' }
     ]
   },
   {
