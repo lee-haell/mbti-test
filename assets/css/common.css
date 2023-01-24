@@ -1,0 +1,16 @@
+@charset 'utf-8';
+
+/* 공통 */
+.btn {
+    cursor: pointer;
+}
+
+
+/* root */
+:root {
+    --bgColor: #F2F1ED;
+    --mainColor: #D2CEFF;
+    --subColor: #FFDCAA;
+    --pointColor: #D0F97A;
+    --textColor: #000;
+}

@@ -2,11 +2,11 @@
 import { questionsData } from './data.js';
 
 //필요한 변수
-const progressValue = document.querySelector('.progress .value');
-const numberElement = document.querySelector('.number');
-const questionElement = document.querySelector('.question');
-const choice1 = document.querySelector('.choice1');
-const choice2 = document.querySelector('.choice2');
+const progressValue = document.querySelector('.progress .value'); //질문바 채워지는 영역
+const numberElement = document.querySelector('.number'); //질문 넘버링
+const questionElement = document.querySelector('.question'); //질문
+const choice1 = document.querySelector('.choice1'); //답변1
+const choice2 = document.querySelector('.choice2'); //답변2
 
 //현재 질문의 번호 변수 초기화
 let currentNum = 0;

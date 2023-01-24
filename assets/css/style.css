@@ -1,72 +1,23 @@
 @charset 'utf-8';
 
-/* 공통 */
 .wrap {
-    padding: 100px 0;
     text-align: center;
-    background: url('/assets/images/main_bg.jpg') center no-repeat;
+    background-color: var(--bgColor);
 }
 
-button {
-    cursor: pointer;
-}
-
-
-/* header */
-.subTitle {
-    width: 200px;
-    padding: 10px 0;
-    font-size: 20px;
-    line-height: 100%;
-    color: coral;
+.inner {
+    width: 375px;
     margin: 0 auto;
-    border: 3px solid coral;
-    border-radius: 25px;
-    font-weight: bold;
+    border: 1px solid var(--textColor);
 }
 
-.title {
-    font-size: 48px;
-    line-height: 100%;
-    font-weight: bold;
-    color: #32BFA1;
-    padding: 16px 0;
-}
-
-
-/* footer */
-.footerWrap {
-    padding-top: 24px;
-}
-
-.btn {
-    display: flex;
+.cnt {
+    display: grid;
     justify-content: center;
-    max-width: 500px;
-    position: relative;
-    margin: 16px auto;
-    padding: 30px 0;
-    border-radius: 20px;
-    background-color: #FF9D56;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 0;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.enterBtn {
-    font-size: 42px;
-    margin-bottom: 30px;
-    box-shadow: 0 14px 0 coral;
-}
-
-.shareBtn {
-    max-width: 350px;
-    font-size: 32px;
-    background-color: #32BFA1;
-    box-shadow: 0 14px 0 #008564;
-}
-
-.btn:last-child {
-    margin-bottom: 0;
+.mainImg {
+    width: 80%;
 }
