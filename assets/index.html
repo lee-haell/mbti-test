@@ -28,19 +28,25 @@
                     나의 연애유형을 알아보는 MBTI 사이트입니다.<br>
                     아래의 버튼을 클릭해주세요:)
                 </p>
-                <button class="btn mainBtn">
+                <button type="button" id="mainBtn" class="btn mainBtn">
                     <p class="en btnCnt">LET'S START</p>
                 </button>
             </article>
             <!-- 메인 페이지 끝 -->
             <!-- 질문 페이지 시작 -->
-            <article id="qna" class="cnt hide qna"></article>
+            <article id="qna" class="cnt hide qna">
+                <div id="questionBox" class="questionBox"></div>
+                <div id="answerBox" class="answerBox">
+                    <button class="answerBtn"></button>
+                </div>
+            </article>
             <!-- 질문 페이지 끝 -->
             <!-- 결과 페이지 시작 -->
             <article id="result" class="cnt hide result"></article>
             <!-- 결과 페이지 끝 -->
         </section>
     </div>
-    <script href="/assets/js/data.js"></script>
+    <script src="/assets/js/data.js"></script>
+    <script src="/assets/js/question.js"></script>
 </body>
 </html>

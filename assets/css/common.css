@@ -19,10 +19,19 @@ html, body {
 
 .cnt {
     position: relative;
+    transition: all 2s ease-out;
 }
 
 .hide {
     display: none;
+}
+
+
+/* page animation */
+@keyframes fadeIn {
+    from {
+        
+    }
 }
 
 
