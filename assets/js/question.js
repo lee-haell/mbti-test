@@ -11,6 +11,7 @@ function renderAnswer(e){
     answerBox.appendChild(answerBtn);
     answerBtn.classList.add('aBtn');
     //생성된 버튼 태그에 인자 넣기
+    //renderQuestion함수에서 호출되는 renderAnswer함수는 파라미터로 qnaList의 answer값들을 가져옴
     answerBtn.innerHTML = e;
 }
 
