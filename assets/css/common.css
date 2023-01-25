@@ -21,6 +21,10 @@ html, body {
     position: relative;
 }
 
+.hide {
+    display: none;
+}
+
 
 /* root */
 :root {

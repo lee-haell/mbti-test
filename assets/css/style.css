@@ -19,10 +19,6 @@
     min-height: 100vh;
 }
 
-.qna, .result {
-    display: none;
-}
-
 .mainTitle {
     font-size: 1.25rem;
     padding-top: 50px;
@@ -31,10 +27,63 @@
 .heart {
     position: absolute;
     top: 115px;
-    left: 70px;
+    left: 55px;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.heart:nth-child(1) {
+    -webkit-animation: upDownHeart1 2s infinite;
+    -ms-animation: upDownHeart1 2s infinite;
+    animation: upDownHeart1 2s infinite;
+}
+
+@keyframes upDownHeart1 {
+    0% {
+        top: 120px;
+    }
+    50% {
+        top: 135px;
+        transform: scale(1.2) rotate(45deg);
+    }
+    100% {
+        top: 120px;
+    }
+}
+
+@keyframes upDownHeart1 {
+    0% {
+        top: 120px;
+    }
+    50% {
+        top: 135px;
+        transform: scale(1.2) rotate(45deg);
+    }
+    100% {
+        top: 120px;
+    }
+}
+
+.heart:nth-child(3) {
+    top: 290px;
+    left: 300px;
+    -webkit-animation: upDownHeart2 2s infinite;
+    -ms-animation: upDownHeart2 2s infinite;
+    animation: upDownHeart2 2s infinite;
+}
+
+@keyframes upDownHeart2 {
+    0% {
+        top: 290px;
+    }
+    50% {
+        top: 280px;
+        transform: scale(1.2) rotate(45deg);
+    }
+    100% {
+        top: 290px;
+    }
 }
 
 .leftHeart,
@@ -59,41 +108,24 @@
     background-color: var(--subColor);
 }
 
-.leftHeart::before {
+.leftHeart::before,
+.rightHeart::before {
     left: -50%;
 }
 
-.leftHeart::after {
+.leftHeart::after,
+.rightHeart::after {
     top: -50%;
     left: 0px;
 }
 
-
-/* .mainImgWrap {
-    position: relative;
-}
-
-.mainImgWrap::before,
-.mainImgWrap::after {
-    content: '';
-    position: absolute;
-}
-
-.mainImgWrap::before {
-    width: 140px;
-    height: 13px;
-    top: 120px;
-    left: 25px;
-    background-color: var(--subColor);
-}
-
-.mainImgWrap::after {
-    width: 30px;
-    height: 30px;
-    top: 190px;
-    right: 60px;
+.rightHeart,
+.rightHeart::before,
+.rightHeart::after {
+    width: 15px;
+    height: 15px;
     background-color: var(--pointColor);
-} */
+}
 
 .mainImg {
     width: 80%;
@@ -138,6 +170,7 @@
     padding: 10px;
     border-radius: 20px;
     font-weight: 600;
+    letter-spacing: 1px;
     border: 1px solid var(--textColor);
     z-index: 1;
 }
