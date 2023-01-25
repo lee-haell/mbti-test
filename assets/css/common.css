@@ -27,14 +27,6 @@ html, body {
 }
 
 
-/* page animation */
-@keyframes fadeIn {
-    from {
-        
-    }
-}
-
-
 /* root */
 :root {
     --bgColor: #F2F1ED;
