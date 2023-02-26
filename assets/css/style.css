@@ -197,3 +197,15 @@
     -ms-transition: all .5s ease-out;
     transition: all .5s ease-out;
 }
+
+.box, .aBtn {
+    padding: 10px 0;
+}
+
+.aBtn {
+    padding-bottom: 0;
+}
+
+.box.answerBox {
+    padding: 0;
+}

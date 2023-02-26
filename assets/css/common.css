@@ -28,6 +28,10 @@ html, body {
     transform: translate(-50%, -50%);
 }
 
+.cnt.qna {
+    height: auto;
+}
+
 .hide {
     display: none;
 }
