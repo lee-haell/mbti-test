@@ -203,9 +203,33 @@
 }
 
 .aBtn {
-    padding-bottom: 0;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 14px;
+    font-style: italic;
+    border: 1px solid var(--textColor);
+    border-radius: 20px;
+    cursor: pointer;
+    -webkit-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+.aBtn:hover {
+    background-color: var(--pointColor);
 }
 
 .box.answerBox {
     padding: 0;
+}
+
+
+/* 질문페이지 index.html */
+.questionBox {
+    font-weight: bold;
+    color: var(--subColor);
+    -webkit-text-stroke: .5px var(--textColor);
 }
