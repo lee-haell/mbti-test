@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/common.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/animation.css">
 </head>
 <body>
     <div class="wrap">
@@ -30,13 +31,13 @@
                         아래의 버튼을 클릭해주세요:)
                     </p>
                 </div>
-                <button type="button" id="mainBtn" class="btn mainBtn">
+                <button type="button" id="mainBtn" class="btn mainBtn" onclick="js:begin()">
                     <p class="en btnCnt">LET'S START</p>
                 </button>
             </article>
             <!-- 메인 페이지 끝 -->
             <!-- 질문 페이지 시작 -->
-            <article id="qna" class="cnt hide qna">
+            <article id="qna" class="cnt qna">
                 <div id="questionBox" class="box questionBox"></div>
                 <div id="answerBox" class="box answerBox"></div>
             </article>
