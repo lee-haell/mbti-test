@@ -12,12 +12,13 @@
 .inner {
     position: relative;
     width: 375px;
-    height: 667px;
+    height: 100vh;
     margin: 0 auto;
     overflow: hidden;
-    /* border: 1px solid var(--textColor); */
+    border: 1px solid var(--textColor);
 }
 
+/*
 .inner::before {
     content: '';
     display: block;
@@ -29,6 +30,7 @@
     transform: scale(1.3);
     background: url('/assets/img/img-phone2.svg') -170px center no-repeat;
 }
+*/
 
 .mainTitle {
     font-size: 1.25rem;
@@ -55,51 +57,12 @@
     animation: upDownHeart1 2s infinite;
 }
 
-@keyframes upDownHeart1 {
-    0% {
-        top: 120px;
-    }
-    50% {
-        top: 135px;
-        transform: scale(1.2) rotate(45deg);
-    }
-    100% {
-        top: 120px;
-    }
-}
-
-@keyframes upDownHeart1 {
-    0% {
-        top: 120px;
-    }
-    50% {
-        top: 135px;
-        transform: scale(1.2) rotate(45deg);
-    }
-    100% {
-        top: 120px;
-    }
-}
-
 .heart:nth-child(3) {
     top: 290px;
     left: 274px;
     -webkit-animation: upDownHeart2 2s infinite;
     -ms-animation: upDownHeart2 2s infinite;
     animation: upDownHeart2 2s infinite;
-}
-
-@keyframes upDownHeart2 {
-    0% {
-        top: 290px;
-    }
-    50% {
-        top: 280px;
-        transform: scale(1.2) rotate(45deg);
-    }
-    100% {
-        top: 290px;
-    }
 }
 
 .leftHeart,
@@ -198,4 +161,40 @@
     -webkit-transition: all .5s ease-out;
     -ms-transition: all .5s ease-out;
     transition: all .5s ease-out;
+}
+
+.box, .aBtn {
+    padding: 10px 0;
+}
+
+.aBtn {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 14px;
+    font-style: italic;
+    border: 1px solid var(--textColor);
+    border-radius: 20px;
+    cursor: pointer;
+    -webkit-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+.aBtn:hover {
+    background-color: var(--pointColor);
+}
+
+.box.answerBox {
+    padding: 0;
+}
+
+
+/* 질문페이지 index.html */
+.questionBox {
+    font-weight: bold;
+    color: var(--subColor);
+    -webkit-text-stroke: .5px var(--textColor);
 }

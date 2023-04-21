@@ -1,42 +1,44 @@
-//메인, 질문 페이지, 버튼 변수
-const main = document.getElementById('main');
-const qna = document.getElementById('qna');
-const btn = document.getElementById('mainBtn');
+const main = document.querySelector('#main');
+const qna = document.querySelector('#qna');
+qna.style.display = 'none';
 
-//질문 페이지에서 표출되는 답변 영역에 내용 출력되는 함수
-function renderAnswer(e){
-    //질문 영역 태그 변수 & 그 안에 버튼 태그 생성 & 버튼 클래스 추가
-    let answerBox = document.getElementById('answerBox');
-    let answerBtn = document.createElement('button');
-    answerBox.appendChild(answerBtn);
-    answerBtn.classList.add('aBtn');
-    //생성된 버튼 태그에 인자 넣기
-    //renderQuestion함수에서 호출되는 renderAnswer함수는 파라미터로 qnaList의 answer값들을 가져옴
-    answerBtn.innerHTML = e;
+function addAnswer(answerText, qIndex){
+    var a = document.querySelector('.answerBox');
+    var answer = document.createElement('button');
+    answer.classList.add('answerList');
+    a.appendChild(answer);
+    answer.innerHTML = answerText;
+    answer.addEventListener('click', function(){
+        var children = document.querySelectorAll('.answerList');
+        for(let i = 0; i < children.length; i++){ //답변 클릭 시 답변들 모두 비활성화
+            children[i].disabled = true;
+            children[i].style.display = 'none';
+        }
+        goNext(++qIndex);
+    }, false);
 }
 
-//질문 페이지에서 질문 내용 출력되는 함수, 답변 출력되는 함수 호출
-function renderQuestion(questionIndex){
-    let question = document.getElementById('questionBox');
-    //질문 페이지의 질문이 들어가는 영역에 data.js에 있는 object(qnaList)에서 q값 index 차례대로 불러오기
-    question.innerHTML = qnaList[questionIndex].q;
-    //클릭할 답변 내용들은 for반복문으로 data.js에 있는 object(qnaList)에서 a값 index 차례대로 불러오기
-    for(let i in qnaList[questionIndex].a){ //총 3가지인 a가 반복
-        renderAnswer(qnaList[questionIndex].a[i].answer);
+function goNext(qIndex){
+    var q = document.querySelector('.questionBox');
+    q.innerHTML = qnaList[qIndex].q;
+    for(let i in qnaList[qIndex].a){ //반복 횟수
+        addAnswer(qnaList[qIndex].a[i].answer, qIndex); //무엇을 반복? 답변버튼
     }
 }
 
-//메인 페이지 클릭 시, 질문 페이지로 이동하는 함수
 function begin(){
-    main.classList.add('hide');
-    qna.classList.remove('hide');
-    
-    //질문 인덱스 초기화
-    let questionIndex = 0;
-    renderQuestion(questionIndex);
+    main.style.WebkitAnimation = 'fadeOut 1s';
+    main.style.animation = 'fadeOut 1s';
+    setTimeout(() => {
+        qna.style.WebkitAnimation = 'fadeIn 1s';
+        qna.style.animation = 'fadeIn 1s';
+        setTimeout(() => {
+            main.style.display = 'none';
+            qna.style.display = 'block';
+        }, 500)
+        var qIndex = 0; 
+        //data.js의 질문들이 순서대로 들어올 수 있도록 초기화, 함수 goNext의 인수에도 넣는다.
+        goNext(qIndex);
+    }, 500)
 }
 
-btn.addEventListener('click', function(){
-    begin();
-    console.log('성공!');
-});
