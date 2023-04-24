@@ -3,11 +3,38 @@
 const main = document.querySelector('#main');
 //서브페이지(질문) 변수 설정
 const qna = document.querySelector('#qna');
+//결과페이지 변수 설정
+const result = document.querySelector('#result');
+//서브페이지(질문) 상태표시줄 상수값
+const endPoint = 12;
 //서브페이지(질문) 숨김
 qna.style.display = 'none';
 
 
-/* 답변영역 생성하는 함수 */
+/* 4. 마지막 답변 클릭 시, 결과페이지 표출하는 함수 */
+function goResult(qIndex){
+    //서브페이지(질문) 서서히 사라지는 애니메이션
+    qna.style.WebkitAnimation = 'fadeOut 1s'; 
+    qna.style.animation = 'fadeOut 1s';
+
+    //서브페이지(질문) 사라지는 애니메이션 실행 뒤 0.5초 후 실행
+    setTimeout(() => {
+        //결과페이지 서서히 나타나는 애니메이션
+        result.style.WebkitAnimation = 'fadeIn 1s';
+        result.style.animation = 'fadeIn 1s'; 
+
+        //결과페이지 나타나는 애니메이션 실행 뒤 0.5초 후 실행
+        setTimeout(() => {
+            //서브페이지(질문) 숨김
+            qna.style.display = 'none';
+            //결과페이지 표출
+            result.style.display = 'block';
+        }, 500)
+    });
+}
+
+
+/* 3. 답변영역 생성하는 함수 */
 function addAnswer(answerText, qIndex){
     //답변영역 변수 설정
     var a = document.querySelector('.answerBox');
@@ -24,6 +51,7 @@ function addAnswer(answerText, qIndex){
     answer.addEventListener('click', function(){
         //.answerList(버튼)를 모두 선택, 변수 설정
         var children = document.querySelectorAll('.answerList');
+        this.classList.add('action');
         //답변(버튼)의 개수만큼 반복
         for(let i = 0; i < children.length; i++){
             //답변(버튼)들 모두 비활성화, 숨김처리
@@ -38,6 +66,11 @@ function addAnswer(answerText, qIndex){
 
 /* 2. 질문 & 답변 data 가져오고 질문영역 표출하는 함수 */
 function goNext(qIndex){
+    //
+    if(qIndex+1 === endPoint){
+        goResult();
+    }
+
     //질문 영역 변수 설정
     var q = document.querySelector('.questionBox');
 
@@ -48,6 +81,10 @@ function goNext(qIndex){
     for(let i in qnaList[qIndex].a){
         addAnswer(qnaList[qIndex].a[i].answer, qIndex);
     }
+    
+    //상태표시줄 width 설정
+    var status = document.querySelector('.statusBar');
+    status.style.width = (100/endPoint) * (qIndex+1) + '%';
 }
 
 /* 1. 메인페이지의 '시작'버튼 클릭하면 실행되는 함수 */
