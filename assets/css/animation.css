@@ -1,6 +1,59 @@
 @charset 'utf-8';
 
-/* 메인 heart animation */
+/* 메인 header animation */
+@keyframes upDownHeart1 {
+    0% {
+        top: 120px;
+    }
+    50% {
+        top: 135px;
+        transform: scale(1.2) rotate(45deg);
+    }
+    100% {
+        top: 120px;
+    }
+}
+
+@-webkit-keyframes upDownHeart1 {
+    0% {
+        top: 120px;
+    }
+    50% {
+        top: 135px;
+        transform: scale(1.2) rotate(45deg);
+    }
+    100% {
+        top: 120px;
+    }
+}
+
+@keyframes upDownHeart2 {
+    0% {
+        top: 230px;
+    }
+    50% {
+        top: 240px;
+        transform: scale(1.2) rotate(45deg);
+    }
+    100% {
+        top: 230px;
+    }
+}
+
+@-webkit-keyframes upDownHeart2 {
+    0% {
+        top: 230px;
+    }
+    50% {
+        top: 240px;
+        transform: scale(1.2) rotate(45deg);
+    }
+    100% {
+        top: 230px;
+    }
+}
+
+/* 페이지 전환 animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -36,7 +89,4 @@
         opacity: 0;
     }
 }
-
-
-/*  */
 
