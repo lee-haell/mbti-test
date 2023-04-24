@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>동물로 알아보는 연애유형 TEST</title>
+    <title>동물로 알아보는 사랑유형 TEST</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/common.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
@@ -15,20 +15,20 @@
         <section class="inner">
             <!-- 메인 페이지 시작 -->
             <article id="main" class="cnt main">
-                <h1 class="mainTitle">동물로 알아보는 연애유형 <span class="en">TEST</span></h1>
+                <h1 class="mainTitle">동물로 알아보는 사랑유형 <span class="en">TEST</span></h1>
                 <div class="mainMiddleWrap">
                     <div class="mainImgWrap">
                         <div class="heart">
                             <div class="leftHeart"></div>
                         </div>
-                        <img src="/assets/img/img-main.png" alt="" class="mainImg">
+                        <img src="/assets/img/img_main.jpg" alt="" class="mainImg">
                         <div class="heart">
                             <div class="rightHeart"></div>
                         </div>
                     </div>
                     <p class="mainCnt">
-                        나의 연애유형을 알아보는 MBTI 사이트입니다.<br>
-                        아래의 버튼을 클릭해주세요:)
+                        나의 사랑유형을 알아보는 MBTI 사이트입니다.<br>
+                        아래의 버튼을 클릭해주세요:&#41;
                     </p>
                 </div>
                 <button type="button" id="mainBtn" class="btn mainBtn" onclick="js:begin()">
@@ -38,12 +38,21 @@
             <!-- 메인 페이지 끝 -->
             <!-- 질문 페이지 시작 -->
             <article id="qna" class="cnt qna">
+                <div class="status">
+                    <div class="statusBar"></div>
+                </div>
                 <div id="questionBox" class="box questionBox"></div>
                 <div id="answerBox" class="box answerBox"></div>
             </article>
             <!-- 질문 페이지 끝 -->
             <!-- 결과 페이지 시작 -->
-            <article id="result" class="cnt hide result"></article>
+            <article id="result" class="cnt hide result">
+                <h1>당신의 사랑유형은?</h1>
+                <div class="resultname"></div>
+                <div id="resultImg" class="resultImg"></div>
+                <div class="resultDesc"></div>
+                <button type="button">공유하기</button>
+            </article>
             <!-- 결과 페이지 끝 -->
         </section>
     </div>
