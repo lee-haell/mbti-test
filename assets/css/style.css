@@ -17,6 +17,10 @@
     overflow: hidden;
 }
 
+.inner.overflow {
+    overflow: auto;
+}
+
 .mainTitle {
     font-size: 1.25rem;
     line-height: 1.3;
@@ -306,7 +310,7 @@
     color: var(--textColor);
     padding: 10px 20px;
     border-radius: 20px;
-    margin-top: 30px;
+    margin: 30px 0;
     background: linear-gradient(to right, #40E0D0, #FF8C00, #FF0080);
     background-size: 400% 400%;
     -webkit-animation: gradientAni 2s ease infinite;

@@ -53,10 +53,12 @@ function goResult(qIndex){
 
         //결과페이지 나타나는 애니메이션 실행 뒤 0.5초 후 실행
         setTimeout(() => {
+            var inner = document.querySelector('.inner');
             //서브페이지(질문) 숨김
             qna.style.display = 'none';
             //결과페이지 표출
             result.style.display = 'block';
+            inner.classList.add('overflow');
         }, 500)
     });
     
