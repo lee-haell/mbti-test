@@ -298,6 +298,7 @@
 
 .img-fluid {
     width: 50%;
+    animation: shake 2s infinite;
 }
 
 .result .resultDesc {

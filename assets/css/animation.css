@@ -51,3 +51,17 @@
     }
 }
 
+/* 결과페이지 이미지 animation */
+@keyframes shake {
+    10% {transform: scale(1.05) rotate(5deg);}
+    20% {transform: scale(1.05) rotate(-5deg);}
+    30% {transform: scale(1.05) rotate(5deg);}
+    40% {transform: none;}
+}
+
+@-webkit-keyframes shake {
+    10% {transform: scale(1.05) rotate(5deg);}
+    20% {transform: scale(1.05) rotate(-5deg);}
+    30% {transform: scale(1.05) rotate(5deg);}
+    40% {transform: none;}
+}
