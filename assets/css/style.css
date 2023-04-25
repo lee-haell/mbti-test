@@ -25,12 +25,12 @@
 .mainTitle {
     font-size: 1.25rem;
     line-height: 1.3;
-    padding-top: 40px;
+    padding-top: 30px;
     color: var(--textColor);
 }
 
-.mainTitle .en {
-    letter-spacing: 0;
+.mainTitle .point {
+    color: var(--subColor);
 }
 
 .mainMiddleWrap {

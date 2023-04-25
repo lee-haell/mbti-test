@@ -7,23 +7,28 @@
     
     <!-- sns share -->
     <meta property="og:url" content="https://animallovetype.netlify.app">
-    <meta property="og:title" content="사랑유형 TEST">
+    <meta property="og:title" content="연애유형 TEST">
     <meta property="og:type" content="website">
     <meta property="og:image" content="img/share.jpg">
-    <meta property="og:description" content="동물로 알아보는 사랑유형 TEST">
+    <meta property="og:description" content="동물로 알아보는 연애유형 TEST">
 
-    <title>동물로 알아보는 사랑유형 TEST</title>
+    <title>동물로 알아보는 연애유형 TEST</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/animation.css">
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        Kakao.init('307209ec4dab08f24bb03eeac594b4b2');
+        Kakao.isInitialized();
+    </script>
 </head>
 <body>
     <div class="wrap">
         <section class="inner">
             <!-- 메인 페이지 시작 -->
             <article id="main" class="cnt main">
-                <h1 class="mainTitle">동물로 알아보는 사랑유형 <span class="en">TEST</span></h1>
+                <h1 class="mainTitle">동물로 알아보는 <span class="point">연애유형 TEST</span></h1>
                 <div class="mainMiddleWrap">
                     <div class="mainImgWrap">
                         <ul class="keywordWrap">
@@ -62,7 +67,7 @@
             <!-- 질문 페이지 끝 -->
             <!-- 결과 페이지 시작 -->
             <article id="result" class="cnt hide result">
-                <h1 class="resultTitle">당신의 사랑유형은?</h1>
+                <h1 class="resultTitle">당신의 연애유형은?</h1>
                 <div class="resultname"></div>
                 <div id="resultImg" class="resultImg"></div>
                 <div class="resultDesc"></div>
@@ -73,5 +78,6 @@
     </div>
     <script src="js/data.js"></script>
     <script src="js/question.js"></script>
+    <script src="js/share.js"></script>
 </body>
 </html>
