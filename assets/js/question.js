@@ -7,8 +7,54 @@ const qna = document.querySelector('#qna');
 const result = document.querySelector('#result');
 //서브페이지(질문) 상태표시줄 상수값
 const endPoint = 12;
+//선택지 배열
+const select = [];
 //서브페이지(질문) 숨김
 qna.style.display = 'none';
+
+
+/* 5. data 배열 */
+function calResult(){
+    var pointArray = [
+        {name: 'mouse', value: 0, key: 0},
+        {name: 'cow', value: 0, key: 1},
+        {name: 'tiger', value: 0, key: 2},
+        {name: 'rabbit', value: 0, key: 3},
+        {name: 'dragon', value: 0, key: 4},
+        {name: 'snake', value: 0, key: 5},
+        {name: 'horse', value: 0, key: 6},
+        {name: 'sheep', value: 0, key: 7},
+        {name: 'monkey', value: 0, key: 8},
+        {name: 'chick', value: 0, key: 9},
+        {name: 'dog', value: 0, key: 10},
+        {name: 'pig', value: 0, key: 11}
+    ]
+
+    for(let i = 0; i < endPoint.length; i++){
+        var target = qnaList[i].a[select[i]];
+        for(let j = 0; j < target.type.length; j++){
+            for(let k = 0; k < pointArray.length; k++){
+                if(target.type[j] === pointArray[k].name){
+                    pointArray[k].value += 1;
+                }
+            }
+        }
+    }
+    
+    //value를 기준값으로 재정렬 -> 
+    var resultArray = pointArray.sort(function(a, b){
+        if(a.value > b.value){
+            return -1; 
+        }
+        if(a.value < b.value){
+            return 1;
+        }
+        return 0;
+    });
+    console.log(resultArray);
+    let resultword = resultArray[0].key;
+    return resultword;
+}
 
 
 /* 4. 마지막 답변 클릭 시, 결과페이지 표출하는 함수 */
@@ -31,11 +77,14 @@ function goResult(qIndex){
             result.style.display = 'block';
         }, 500)
     });
+    
+    console.log(select);
+    calResult();
 }
 
 
 /* 3. 답변영역 생성하는 함수 */
-function addAnswer(answerText, qIndex){
+function addAnswer(answerText, qIndex, idx){
     //답변영역 변수 설정
     var a = document.querySelector('.answerBox');
     //버튼 태그 만들고 변수 설정
@@ -49,26 +98,35 @@ function addAnswer(answerText, qIndex){
 
     //답변(버튼) 클릭했을 때 일어나는 이벤트
     answer.addEventListener('click', function(){
+        this.classList.add('action');
         //.answerList(버튼)를 모두 선택, 변수 설정
         var children = document.querySelectorAll('.answerList');
-        this.classList.add('action');
         //답변(버튼)의 개수만큼 반복
         for(let i = 0; i < children.length; i++){
             //답변(버튼)들 모두 비활성화, 숨김처리
             children[i].disabled = true;
-            children[i].style.display = 'none';
+            children[i].style.WebkitAnimation = 'fadeOut .5s';
+            children[i].style.animation = 'fadeOut .5s';
         }
-        //질문 & 답변 data 가져오는 함수(+1씩 증가)
-        goNext(++qIndex);
+        setTimeout(() => {
+            //몇 번째 질문의, 몇 번째 버튼 클릭했는지 select배열에 담김
+            select[qIndex] = idx;
+            for(let i = 0; i < children.length; i++){
+                children[i].style.display = 'none';
+            }
+            //질문 & 답변 data 가져오는 함수(+1씩 증가)
+            goNext(++qIndex);
+        }, 500);
     }, false);
 }
 
 
 /* 2. 질문 & 답변 data 가져오고 질문영역 표출하는 함수 */
 function goNext(qIndex){
-    //
-    if(qIndex+1 === endPoint){
+    //결과 페이지 표출
+    if(qIndex === endPoint){
         goResult();
+        return;
     }
 
     //질문 영역 변수 설정
@@ -79,10 +137,10 @@ function goNext(qIndex){
 
     //data.js의 답변영역들 for 반복문으로 개수만큼 불러오기
     for(let i in qnaList[qIndex].a){
-        addAnswer(qnaList[qIndex].a[i].answer, qIndex);
+        addAnswer(qnaList[qIndex].a[i].answer, qIndex, i);
     }
     
-    //상태표시줄 width 설정
+    //상태표시줄 width 설정 > qIndex에 1 더한 값에 100을 나눈 결과를 endPoint(12) 값과 곱한 것
     var status = document.querySelector('.statusBar');
     status.style.width = (100/endPoint) * (qIndex+1) + '%';
 }
