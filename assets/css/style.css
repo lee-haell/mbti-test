@@ -19,6 +19,7 @@
 
 .inner.overflow {
     overflow: auto;
+    height: 100%;
 }
 
 .mainTitle {
