@@ -17,20 +17,25 @@ qna.style.display = 'none';
 function calResult(){
     var result = select.indexOf(Math.max(...select));
     return result;
-    
-    // //value를 기준값으로 재정렬 -> 
-    // var resultArray = pointArray.sort(function(a, b){
-    //     if(a.value > b.value){
-    //         return -1; 
-    //     }
-    //     if(a.value < b.value){
-    //         return 1;
-    //     }
-    //     return 0;
-    // });
-    // console.log(resultArray);
-    // let resultword = resultArray[0].key;
-    // return resultword;
+}
+
+
+/**/
+function setResult(){
+    let point = calResult();
+    const resultName = document.querySelector('.resultname');
+    resultName.innerHTML = infoList[point].name;
+
+    var resultImg = document.createElement('img');
+    const imgDiv = document.querySelector('#resultImg');
+    var imgURL = 'img/image-' + point + '.jpg';
+    resultImg.src = imgURL;
+    resultImg.alt = point;
+    resultImg.classList.add('img-fluid');
+    imgDiv.appendChild(resultImg);
+
+    const resultDesc = document.querySelector('.resultDesc');
+    resultDesc.innerHTML = infoList[point].desc;
 }
 
 
@@ -55,7 +60,7 @@ function goResult(qIndex){
         }, 500)
     });
     
-    console.log(select);
+    setResult();
     calResult();
 }
 
@@ -87,7 +92,7 @@ function addAnswer(answerText, qIndex, idx){
         }
         setTimeout(() => {
             var target = qnaList[qIndex].a[idx].type;
-            for(let j = 0; j < target.type.length; j++){
+            for(let i = 0; i < target.length; i++){
                 select[target[i]] += 1;
             }
             //몇 번째 질문의, 몇 번째 버튼 클릭했는지 select배열에 담김
