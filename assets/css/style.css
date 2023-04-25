@@ -224,7 +224,7 @@
 .questionBox {
     font-weight: bold;
     line-height: 1.3;
-    text-align: left;
+    text-align: center;
     padding: 15px;
     border-radius: 0 10px 10px;
     color: var(--pointColor);
