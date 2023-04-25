@@ -45,9 +45,9 @@ html, body, button {
 /* root */
 :root {
     /* --bgColor: #F2F1ED; */
-    --bgColor: #fff;
-    --mainColor: #D2CEFF;
-    --subColor: #FFDCAA;
-    --pointColor: #D0F97A;
-    --textColor: #000;
+    --bgColor: #1c1c1c;
+    --mainColor: #5d31ff;
+    --subColor: #f88cd5;
+    --pointColor: #def241;
+    --textColor: #eeedf2;
 }
