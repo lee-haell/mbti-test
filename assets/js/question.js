@@ -13,14 +13,14 @@ const select = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 qna.style.display = 'none';
 
 
-/* 5. data 배열 */
+/* data 배열 */
 function calResult(){
     var result = select.indexOf(Math.max(...select));
     return result;
 }
 
 
-/**/
+/* 결과 카카오톡으로 공유하기 */
 function setResult(){
     let point = calResult();
     const resultName = document.querySelector('.resultname');
@@ -39,7 +39,17 @@ function setResult(){
 }
 
 
-/* 4. 마지막 답변 클릭 시, 결과페이지 표출하는 함수 */
+/* 결과페이지의 저장하기 버튼 클릭 시, 해당 결과이미지 가져오는 함수 */
+function downloadResult(){
+    let point = calResult();
+    const downloadImg = document.querySelector('#downloadImg');
+    var downloadImgURL = 'img/download-' + point + '.png'
+
+    downloadImg.href = downloadImgURL;
+}
+
+
+/* 마지막 답변 클릭 시, 결과페이지 표출하는 함수 */
 function goResult(qIndex){
     //서브페이지(질문) 서서히 사라지는 애니메이션
     qna.style.WebkitAnimation = 'fadeOut 1s'; 
@@ -63,11 +73,12 @@ function goResult(qIndex){
     });
     
     setResult();
+    downloadResult();
     calResult();
 }
 
 
-/* 3. 답변영역 생성하는 함수 */
+/* 답변영역 생성하는 함수 */
 function addAnswer(answerText, qIndex, idx){
     //답변영역 변수 설정
     var a = document.querySelector('.answerBox');
@@ -108,7 +119,7 @@ function addAnswer(answerText, qIndex, idx){
 }
 
 
-/* 2. 질문 & 답변 data 가져오고 질문영역 표출하는 함수 */
+/* 질문 & 답변 data 가져오고 질문영역 표출하는 함수 */
 function goNext(qIndex){
     //결과 페이지 표출
     if(qIndex === endPoint){
@@ -132,7 +143,7 @@ function goNext(qIndex){
     status.style.width = (100/endPoint) * (qIndex+1) + '%';
 }
 
-/* 1. 메인페이지의 '시작'버튼 클릭하면 실행되는 함수 */
+/* 메인페이지의 '시작'버튼 클릭하면 실행되는 함수 */
 function begin(){
     //메인페이지 서서히 사라지는 애니메이션
     main.style.WebkitAnimation = 'fadeOut 1s'; 
