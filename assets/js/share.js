@@ -8,32 +8,32 @@ function setShare(){
     const shareImage = url + 'img/image-' + resultAlt + '.jpg';
     const shareURL = url + 'page/result-' + resultAlt + '.html';
 
-    function kakaoShare(){
-        Kakao.Share.sendDefault({
-            objectType: 'feed',
-            content: {
-                title: shareTitle,
-                description: shareDes,
-                imageUrl: shareImage,
-                link: {
-                    mobileWebUrl: 'https://developers.kakao.com',
-                    webUrl: 'https://developers.kakao.com',
-                },
-            },
-            buttons: [
-            {
-                title: '결과 확인하기',
-                link: {
-                mobileWebUrl: shareURL,
-                webUrl: shareURL,
-                },
-            }
-            ],
-        });
-    }
+    kakaoShare();
 }
 
-
+function kakaoShare(){
+    Kakao.Share.sendDefault({
+        objectType: 'feed',
+        content: {
+            title: shareTitle,
+            description: shareDes,
+            imageUrl: shareImage,
+            link: {
+                mobileWebUrl: 'https://developers.kakao.com',
+                webUrl: 'https://developers.kakao.com',
+            },
+        },
+        buttons: [
+        {
+            title: '결과 확인하기',
+            link: {
+            mobileWebUrl: shareURL,
+            webUrl: shareURL,
+            },
+        }
+        ],
+    });
+}
 // function kakaoShare(){
 //     Kakao.Share.sendDefault({
 //         objectType: 'feed',
