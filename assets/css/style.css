@@ -319,6 +319,17 @@
     cursor: pointer;
 }
 
+
+/* 공유용 결과페이지 */
 #shareResult {
     color: var(--textColor);
+}
+
+#shareResult.result {
+    display: block;
+}
+
+.inner.resultInner {
+    overflow: auto;
+    height: 100%;    
 }
