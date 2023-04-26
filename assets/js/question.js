@@ -43,7 +43,7 @@ function setResult(){
 function downloadResult(){
     let point = calResult();
     const downloadImg = document.querySelector('#downloadImg');
-    var downloadImgURL = 'img/download-' + point + '.png'
+    var downloadImgURL = 'img/load-' + point + '.png'
 
     downloadImg.href = downloadImgURL;
 }

@@ -310,11 +310,30 @@
     color: var(--textColor);
     padding: 10px 20px;
     border-radius: 20px;
-    margin: 30px 5px;
     background-color: var(--mainColor);
     cursor: pointer;
+    margin: 30px 0 20px 0;
+    width: 60%;
 }
 
+.btnList:last-child {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.btnList .btnIcon {
+    margin: 0 5px;
+    width: 32px;
+}
+
+.btnList .btnIcon img {
+    width: 80%;
+}
+
+.btnList .downloadImg {
+    display: block;
+}
 
 /* 공유용 결과페이지 */
 #shareResult {
@@ -328,9 +347,4 @@
 .inner.resultInner {
     overflow: auto;
     height: 100%;    
-}
-
-.btnWrap {
-    display: flex;
-    justify-content: center;
 }

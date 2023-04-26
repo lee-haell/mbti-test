@@ -39,7 +39,20 @@
                 location.href = '../index.html';
             }
         </script>
-        <button type="button" class="goHome resultBtn" onclick="js:goHome()">다시하기</button>
+        <ul class="btnWrap">
+            <li class="btnList">
+                <button type="button" class="goHome resultBtn" onclick="js:goHome()">다시하기</button>
+            </li>
+            <li class="btnList">
+                <button type="button" class="btnIcon shareBtn" onclick="js:setShare()">
+                    <img src="https://img.icons8.com/external-tal-revivo-bold-tal-revivo/48/FFFFFF/external-kakaotalk-or-katalk-is-a-free-mobile-instant-messaging-application-for-smartphones-logo-bold-tal-revivo.png" alt="카카오톡으로 공유하기" class="shareIcon"/>
+                </button>
+                <a href="" download id="downloadImg" class="btnIcon downloadImg">
+                    <button type="button" class="downloadBtn">
+                        <img src="https://img.icons8.com/material-rounded/48/FFFFFF/download--v1.png" alt="이미지로 저장하기" class="downloadIcon"/>
+                    </button>
+                </a>
+            </li>
     </div>
 </div>
 </div>
