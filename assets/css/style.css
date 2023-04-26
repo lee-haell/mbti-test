@@ -310,12 +310,8 @@
     color: var(--textColor);
     padding: 10px 20px;
     border-radius: 20px;
-    margin: 30px 0;
-    background: linear-gradient(to right, #40E0D0, #FF8C00, #FF0080);
-    background-size: 400% 400%;
-    -webkit-animation: gradientAni 2s ease infinite;
-    -moz-animation: gradientAni 2s ease infinite;
-    animation: gradientAni 2s ease infinite;
+    margin: 30px 5px;
+    background-color: var(--mainColor);
     cursor: pointer;
 }
 
@@ -332,4 +328,9 @@
 .inner.resultInner {
     overflow: auto;
     height: 100%;    
+}
+
+.btnWrap {
+    display: flex;
+    justify-content: center;
 }
