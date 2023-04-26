@@ -319,3 +319,6 @@
     cursor: pointer;
 }
 
+#shareResult {
+    color: var(--textColor);
+}
